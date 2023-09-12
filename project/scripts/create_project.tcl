@@ -10,7 +10,7 @@ if (![regexp 505_RISC_V $CURR_DIR]) {
 }
 
 set BASE_DIR [regsub (505_RISC_V.*$) $CURR_DIR 505_RISC_V]
-source $BASE_DIR/Project/Scripts/define_directories.tcl
+source $BASE_DIR/project/scripts/define_directories.tcl
 
 set buildLog build.log
 

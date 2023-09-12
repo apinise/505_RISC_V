@@ -17,7 +17,7 @@ set GIT_DIR [regsub (505_RISC_V.*$) $CURR_DIR 505_RISC_V]
 set PROJ_DIR $GIT_DIR/project
 set SCRIPT_DIR $PROJ_DIR/scripts
 # set MEM_DIR $PROJ_DIR/Mem_Files
-set CONSTRAINT_DIR $PROJ_DIR/constraint
+set CONSTRAINT_DIR $PROJ_DIR/constraints
 set WORK_DIR $PROJ_DIR/work
 
 set HDL_DIR $GIT_DIR/hdl
