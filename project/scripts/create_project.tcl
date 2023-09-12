@@ -38,6 +38,7 @@ set_param synth.elaboration.rodinMoreOptions "rt::set_parameter var_size_limit 1
 add_files -fileset constrs_1 -norecurse [glob $CONSTRAINT_DIR/*.xdc]
 
 # Add ALU Sources
+add_files $HDL_DIR/alu/alu.sv
 
 # Add Register File Sources
 
