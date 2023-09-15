@@ -41,14 +41,18 @@ add_files -fileset constrs_1 -norecurse [glob $CONSTRAINT_DIR/*.xdc]
 add_files $HDL_DIR/alu/alu.sv
 
 # Add Register File Sources
+add_files $HDL_DIR/reg_gp/register_file.sv
 
 # Add Instruct Mem Sources
 
 # Add Data Mem Sources
 
 # Add Program Counter Sources
+add_files $HDL_DIR/program_counter/program_counter.sv
 
 # Add Lib Sources
+add_files $HDL_DIR/lib/mux2to1.sv
+add_files $HDL_DIR/lib/mux2to1.sv
 
 # Add Processor Sources
 

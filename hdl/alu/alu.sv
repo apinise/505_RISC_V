@@ -1,32 +1,26 @@
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
+//////////////////////////////////////////////////////////////// 
 // Engineer: Evan Apinis
 // 
-// Create Date: 06/23/2023 10:48:04 PM
-// Design Name: 
 // Module Name: alu.sv
-// Project Name: RV32I
-// Target Devices: 
-// Tool Versions: 
+// Project Name: RV32I 
 // Description: 
 // 
-// Dependencies: ALU module for a RV32I CPU supporting the entire base instruction
-// 		 set.
-// Revision:
+// ALU module for a RV32I CPU supporting the entire
+// base instruction set.
+//
 // Revision 0.01 - File Created
-// Additional Comments:
 // 
-//////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
 
 module alu #(
-    parameter DWIDTH = 32
+  parameter DWIDTH = 32
 )(
-input   logic [DWIDTH-1:0]  ALU_In_A, //Operand A
-input   logic [DWIDTH-1:0]  ALU_In_B, //Operand B
-input   logic [3:0]         ALU_OP, //ALU Opcode
-output  logic [DWIDTH-1:0]  ALU_Out, //ALU Result
-output  logic               ALU_Zero_Flag
+  input   logic [DWIDTH-1:0]  ALU_In_A, //Operand A
+  input   logic [DWIDTH-1:0]  ALU_In_B, //Operand B
+  input   logic [3:0]         ALU_OP,   //ALU Opcode
+  output  logic [DWIDTH-1:0]  ALU_Out,  //ALU Result
+  output  logic               ALU_Zero_Flag
 );
 
 /*
@@ -60,37 +54,37 @@ output  logic               ALU_Zero_Flag
 ////////////////////////////////////////////////////////////////
 
 //Local parameters for ALU decode from control logic
-localparam ADD = 4'b0000;
-localparam SUB = 4'b0001;
-localparam SLL = 4'b0010;
-localparam SLT = 4'b0011;
+localparam ADD  = 4'b0000;
+localparam SUB  = 4'b0001;
+localparam SLL  = 4'b0010;
+localparam SLT  = 4'b0011;
 localparam SLTU = 4'b0100;
-localparam XOR = 4'b0101;
+localparam XOR  = 4'b0101;
 localparam SRL  = 4'b0110;
-localparam SRA = 4'b0111;
-localparam OR = 4'b1000;
-localparam AND = 4'b1001;
+localparam SRA  = 4'b0111;
+localparam OR   = 4'b1000;
+localparam AND  = 4'b1001;
 
 ////////////////////////////////////////////////////////////////
 ///////////////////////   Module Logic   ///////////////////////
 ////////////////////////////////////////////////////////////////
 
 always_comb begin
-    casez(ALU_OP)
-        ADD: ALU_Out = ALU_In_A + ALU_In_B; //add
-        SUB: ALU_Out = ALU_In_A - ALU_In_B; //subtract
-        SLL: ALU_Out = ALU_In_A << ALU_In_B; //logical left shift
-        SLT: ALU_Out = ($signed(ALU_In_A) < $signed(ALU_In_B)) ? 1 : '0; //signed less than
-        SLTU: ALU_Out = (ALU_In_A < ALU_In_B) ? 1 : '0; //Unsigned set on less then
-        XOR: ALU_Out = ALU_In_A ^ ALU_In_B; //xor
-        SRL: ALU_Out = ALU_In_A >> ALU_In_B; //shift logic right
-        SRA: ALU_Out = $signed(ALU_In_A) >>> ALU_In_B; //signed shift logic right
-        OR: ALU_Out = ALU_In_A | ALU_In_B; //or
-        AND: ALU_Out = ALU_In_A & ALU_In_B; //and
-        default: begin
-            ALU_Out = ALU_In_A + ALU_In_B; //default add
-        end
-    endcase
+  casez(ALU_OP)
+    ADD:  ALU_Out = ALU_In_A + ALU_In_B; //add
+    SUB:  ALU_Out = ALU_In_A - ALU_In_B; //subtract
+    SLL:  ALU_Out = ALU_In_A << ALU_In_B; //logical left shift
+    SLT:  ALU_Out = ($signed(ALU_In_A) < $signed(ALU_In_B)) ? 1 : '0; //signed less than
+    SLTU: ALU_Out = (ALU_In_A < ALU_In_B) ? 1 : '0; //Unsigned set on less then
+    XOR:  ALU_Out = ALU_In_A ^ ALU_In_B; //xor
+    SRL:  ALU_Out = ALU_In_A >> ALU_In_B; //shift logic right
+    SRA:  ALU_Out = $signed(ALU_In_A) >>> ALU_In_B; //signed shift logic right
+    OR:   ALU_Out = ALU_In_A | ALU_In_B; //or
+    AND:  ALU_Out = ALU_In_A & ALU_In_B; //and
+    default: begin
+      ALU_Out = ALU_In_A + ALU_In_B; //default add
+    end
+  endcase
 end
 
 assign ALU_Zero_Flag = (ALU_Out == '0) ? '1 : '0; //set on zero
@@ -100,15 +94,15 @@ assign ALU_Zero_Flag = (ALU_Out == '0) ? '1 : '0; //set on zero
 ////////////////////////////////////////////////////////////////
 /*
 alu #(
-    .DWIDTH(32)
+  .DWIDTH(32)
 )
 alu
 (
-    .ALU_In_A(),
-    .ALU_In_B(),
-    .ALU_OP(),
-    .ALU_Out(),
-    .ALU_Zero_Flag()
+  .ALU_In_A(),
+  .ALU_In_B(),
+  .ALU_OP(),
+  .ALU_Out(),
+  .ALU_Zero_Flag()
 );
 */
 
