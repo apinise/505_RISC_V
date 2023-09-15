@@ -44,20 +44,28 @@ add_files $HDL_DIR/alu/alu.sv
 add_files $HDL_DIR/reg_gp/register_file.sv
 
 # Add Instruct Mem Sources
+add_files $HDL_DIR/instruct_mem/instruct_mem.sv
 
 # Add Data Mem Sources
 
 # Add Program Counter Sources
 add_files $HDL_DIR/program_counter/program_counter.sv
+add_files $HDL_DIR/program_counter/program_counter_add.sv
+add_files $HDL_DIR/program_counter/program_counter_top.sv
 
 # Add Lib Sources
 add_files $HDL_DIR/lib/mux2to1.sv
-add_files $HDL_DIR/lib/mux2to1.sv
+add_files $HDL_DIR/lib/mux3to1.sv
 
 # Add Processor Sources
+add_files $HDL_DIR/proc/core.sv
+add_files $HDL_DIR/proc/proc_top.sv
+
+# Add Ctrl Logic Sources
+add_files $HDL_DIR/ctrl_logic/ctrl_logic.sv
 
 # Set top level module
-#set_property top alu [current_fileset]
+set_property top proc_top [current_fileset]
 update_compile_order -fileset sources_1
 
 set end_time [clock seconds]

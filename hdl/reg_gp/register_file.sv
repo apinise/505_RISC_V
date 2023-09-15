@@ -49,7 +49,7 @@ integer j;
 
 initial begin
   for (i=0; i<32; i++) begin
-    $readmemb("../../../../../../Project/Mem_Files/register_file.txt", reg_array);
+    $readmemb("../../../../../../project/mem_files/register_file_r.txt", reg_array);
     //reg_array[i] = 32'd0;
   end
 end

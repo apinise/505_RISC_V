@@ -13,7 +13,7 @@
 ////////////////////////////////////////////////////////////////
 
 module proc_top #(
-  parameter DWIDTH = 32;
+  parameter DWIDTH = 32
 )(
   input logic Clk_Core,
   input logic Rst_Core_N
@@ -27,19 +27,32 @@ module proc_top #(
 ///////////////////////   Internal Net   ///////////////////////
 ////////////////////////////////////////////////////////////////
 
+logic [DWIDTH-1:0]  program_count;
+logic [31:0]        instruction;
+
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////
 ////////////////////////////////////////////////////////////////
 
+core #(
+  .DWIDTH()
+)
+core_1 (
+  .Clk_Core(Clk_Core),
+  .Rst_Core_N(Rst_Core_N),
+  .Instruction(instruction),
+  .Program_Count(program_count)
+);
+
 instruct_mem #(
-  .DWIDTH(DWIDTH)
+  .DWIDTH(DWIDTH),
   .MEM_SIZE(16384)
 )
 instruct_mem (
   .Clk_Core(Clk_Core),
   .Rst_Core_N(Rst_Core_N),
-  .Program_Count(),
-  .Instruction()
+  .Program_Count(program_count),
+  .Instruction(instruction)
 );
 
 ////////////////////////////////////////////////////////////////

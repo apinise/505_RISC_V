@@ -18,14 +18,14 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module program_counter #(
+module program_counter_top #(
   parameter DWIDTH = 32
 )(
   input  logic              Clk_Core,				      // 100 MHz Core Clock
   input  logic              Rst_Core_N,				    // Core Clock Reset
   input  logic              PC_Sel,					      // Input Select 0: Increment 1: Immediate
   input  logic [DWIDTH-1:0] Program_Count_Imm,		// Immediate Offset of PC
-  output logic [DWIDTH-1:0] Program_Count_Off     // PC + 4 Offset
+  output logic [DWIDTH-1:0] Program_Count_Off,     // PC + 4 Offset
   output logic [DWIDTH-1:0] Program_Count			    // Current Program Count
 );
 

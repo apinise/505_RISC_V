@@ -1,0 +1,17 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/505_Project/505_RISC_V/hdl/alu/alu.sv,1694742403,systemVerilog,,D:/505_Project/505_RISC_V/hdl/proc/core.sv,,alu,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/ctrl_logic/ctrl_logic.sv,1694821058,systemVerilog,,D:/505_Project/505_RISC_V/hdl/instruct_mem/instruct_mem.sv,,ctrl_logic,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/instruct_mem/instruct_mem.sv,1694821092,systemVerilog,,D:/505_Project/505_RISC_V/hdl/lib/mux2to1.sv,,instruct_mem,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/lib/mux2to1.sv,1694742608,systemVerilog,,D:/505_Project/505_RISC_V/hdl/lib/mux3to1.sv,,mux2to1,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/lib/mux3to1.sv,1694742654,systemVerilog,,D:/505_Project/505_RISC_V/hdl/proc/proc_top.sv,,mux3to1,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/proc/core.sv,1694821120,systemVerilog,,D:/505_Project/505_RISC_V/hdl/ctrl_logic/ctrl_logic.sv,,core,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/proc/proc_top.sv,1694820820,systemVerilog,,D:/505_Project/505_RISC_V/hdl/program_counter/program_counter.sv,,proc_top,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/program_counter/program_counter.sv,1694744645,systemVerilog,,D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_add.sv,,program_counter,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_add.sv,1694744601,systemVerilog,,D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_top.sv,,program_counter_add,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_top.sv,1694820683,systemVerilog,,D:/505_Project/505_RISC_V/hdl/reg_gp/register_file.sv,,program_counter_top,,uvm,,,,,,
+D:/505_Project/505_RISC_V/hdl/reg_gp/register_file.sv,1694813107,systemVerilog,,D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.srcs/sim_1/new/proc_top_tb.sv,,register_file,,uvm,,,,,,
+D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.srcs/sim_1/new/proc_top_tb.sv,1694820999,systemVerilog,,,,proc_top_tb,,uvm,,,,,,
