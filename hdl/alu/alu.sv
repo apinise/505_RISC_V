@@ -19,6 +19,7 @@ module alu #(
   input   logic [DWIDTH-1:0]  ALU_In_A, //Operand A
   input   logic [DWIDTH-1:0]  ALU_In_B, //Operand B
   input   logic [3:0]         ALU_OP,   //ALU Opcode
+  input   logic [2:0]         MUL_OP,   //MUL DIV Opcode
   output  logic [DWIDTH-1:0]  ALU_Out,  //ALU Result
   output  logic               ALU_Zero_Flag
 );
@@ -64,6 +65,36 @@ localparam SRL  = 4'b0110;
 localparam SRA  = 4'b0111;
 localparam OR   = 4'b1000;
 localparam AND  = 4'b1001;
+localparam MULT = 4'b1010;
+
+// Local parameters for Multiplication decode
+localparam MUL    = 3'b000;
+localparam MULH   = 3'b001;
+localparam MULHSU = 3'b010;
+localparam MULHU  = 3'b011;
+localparam DIV    = 3'b100;
+localparam DIVU   = 3'b101;
+localparam REM    = 3'b110;
+localparam REMU   = 3'b111;
+
+////////////////////////////////////////////////////////////////
+///////////////////////   Internal Net   ///////////////////////
+////////////////////////////////////////////////////////////////
+
+logic [DWIDTH-1:0] mul_div_low = 32'd0;
+logic [DWIDTH-1:0] mul_div_upper = 32'd0;
+
+////////////////////////////////////////////////////////////////
+//////////////////////   Instantiations   //////////////////////
+////////////////////////////////////////////////////////////////
+
+multiplier multiplier (
+  .Mul_In_A     (ALU_In_A),
+  .Mul_In_B     (ALU_In_B),
+  .Mul_Sel      (MUL_OP),
+  .Mul_Out_Upper(mul_div_upper),
+  .Mul_Out_Lower(mul_div_low)
+);
 
 ////////////////////////////////////////////////////////////////
 ///////////////////////   Module Logic   ///////////////////////
@@ -81,6 +112,18 @@ always_comb begin
     SRA:  ALU_Out = $signed(ALU_In_A) >>> ALU_In_B; //signed shift logic right
     OR:   ALU_Out = ALU_In_A | ALU_In_B; //or
     AND:  ALU_Out = ALU_In_A & ALU_In_B; //and
+    MULT: begin
+      casez(MUL_OP)
+        MUL:    ALU_Out = mul_div_low;
+        MULH:   ALU_Out = mul_div_upper;
+        MULHSU: ALU_Out = mul_div_upper;
+        MULHU:  ALU_Out = mul_div_upper;
+        DIV:    ALU_Out = mul_div_low;
+        DIVU:   ALU_Out = mul_div_low;
+        REM:    ALU_Out = mul_div_low;
+        REMU:   ALU_Out = mul_div_low;
+      endcase
+    end
     default: begin
       ALU_Out = ALU_In_A + ALU_In_B; //default add
     end
@@ -101,6 +144,7 @@ alu
   .ALU_In_A(),
   .ALU_In_B(),
   .ALU_OP(),
+  .MUL_OP(),
   .ALU_Out(),
   .ALU_Zero_Flag()
 );

@@ -39,6 +39,10 @@ add_files -fileset constrs_1 -norecurse [glob $CONSTRAINT_DIR/*.xdc]
 
 # Add ALU Sources
 add_files $HDL_DIR/alu/alu.sv
+add_files $HDL_DIR/alu/multiplier.sv
+
+# Add Branch Sources
+add_files $HDL_DIR/branch_comp/branch_comp.sv
 
 # Add Register File Sources
 add_files $HDL_DIR/reg_gp/register_file.sv
@@ -47,6 +51,10 @@ add_files $HDL_DIR/reg_gp/register_file.sv
 add_files $HDL_DIR/instruct_mem/instruct_mem.sv
 
 # Add Data Mem Sources
+add_files $HDL_DIR/data_mem/data_mem.sv
+add_files $HDL_DIR/data_mem/data_mem_ctrl.sv
+add_files $HDL_DIR/data_mem/data_mem_lw.sv
+add_files $HDL_DIR/data_mem/data_mem_sw.sv
 
 # Add Program Counter Sources
 add_files $HDL_DIR/program_counter/program_counter.sv
@@ -63,6 +71,9 @@ add_files $HDL_DIR/proc/proc_top.sv
 
 # Add Ctrl Logic Sources
 add_files $HDL_DIR/ctrl_logic/ctrl_logic.sv
+
+# Add Immediate Gen Sources
+add_files $HDL_DIR/immediate_gen/imm_gen.sv
 
 # Set top level module
 set_property top proc_top [current_fileset]

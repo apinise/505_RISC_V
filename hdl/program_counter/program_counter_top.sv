@@ -40,28 +40,19 @@ logic [DWIDTH-1:0] program_count_new;
 //////////////////////   Instantiations   //////////////////////
 ////////////////////////////////////////////////////////////////
 
-mux2to1 #(
-  .DWIDTH(DWIDTH)
-)
-mux2to1 (
+mux2to1 mux2to1 (
   .Mux_In_A (program_count_four),
   .Mux_In_B (Program_Count_Imm),
   .Input_Sel(PC_Sel),
   .Mux_Out  (program_count_new)
 );
 
-program_counter_add #(
-  .DWIDTH(DWIDTH)
-)
-program_counter_add (
+program_counter_add program_counter_add (
   .Program_Count_Curr(Program_Count),
   .Program_Count_Next(program_count_four)
 );
 
-program_counter #(
-  .DWIDTH(DWIDTH)
-)
-program_counter (
+program_counter program_counter (
   .Clk_Core         (Clk_Core),
   .Rst_Core_N       (Rst_Core_N),
   .Program_Count_New(program_count_new),

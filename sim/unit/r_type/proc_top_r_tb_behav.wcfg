@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="proc_top_r_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="proc_top_r_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="50.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="115.301 ns"></ZoomEndTime>
+      <Cursor1Time time="57.074 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="223"></NameColumnWidth>
+      <ValueColumnWidth column_width="155"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/proc_top_r_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/proc_top_r_tb/rst_core_n" type="logic">
+      <obj_property name="ElementShortName">rst_core_n</obj_property>
+      <obj_property name="ObjectShortName">rst_core_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="group19" type="group">
+      <obj_property name="label">Data Mem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/Clk_Core" type="logic">
+         <obj_property name="ElementShortName">Clk_Core</obj_property>
+         <obj_property name="ObjectShortName">Clk_Core</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/Read_Ctrl" type="logic">
+         <obj_property name="ElementShortName">Read_Ctrl</obj_property>
+         <obj_property name="ObjectShortName">Read_Ctrl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/Write_Ctrl" type="array">
+         <obj_property name="ElementShortName">Write_Ctrl[3:0]</obj_property>
+         <obj_property name="ObjectShortName">Write_Ctrl[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/Mem_Data_Address" type="array">
+         <obj_property name="ElementShortName">Mem_Data_Address[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Mem_Data_Address[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/Mem_Data_Write" type="array">
+         <obj_property name="ElementShortName">Mem_Data_Write[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Mem_Data_Write[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/Mem_Data_Read" type="array">
+         <obj_property name="ElementShortName">Mem_Data_Read[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Mem_Data_Read[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/mem_address" type="array">
+         <obj_property name="ElementShortName">mem_address[13:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_address[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/data_mem[0]" type="array">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/data_mem[1]" type="array">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/data_mem[5]" type="array">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/j" type="array">
+         <obj_property name="ElementShortName">j[31:0]</obj_property>
+         <obj_property name="ObjectShortName">j[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/MEM_SIZE" type="array">
+         <obj_property name="ElementShortName">MEM_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/NUM_COL" type="array">
+         <obj_property name="ElementShortName">NUM_COL[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NUM_COL[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/COL_WIDTH" type="array">
+         <obj_property name="ElementShortName">COL_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">COL_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/DWIDTH" type="array">
+         <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/data_mem/ADDR_SIZE" type="array">
+         <obj_property name="ElementShortName">ADDR_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ADDR_SIZE[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group36" type="group">
+      <obj_property name="label">ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/ALU_In_A" type="array">
+         <obj_property name="ElementShortName">ALU_In_A[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ALU_In_A[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/ALU_In_B" type="array">
+         <obj_property name="ElementShortName">ALU_In_B[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ALU_In_B[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/ALU_OP" type="array">
+         <obj_property name="ElementShortName">ALU_OP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ALU_OP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/MUL_OP" type="array">
+         <obj_property name="ElementShortName">MUL_OP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">MUL_OP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/ALU_Out" type="array">
+         <obj_property name="ElementShortName">ALU_Out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ALU_Out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/ALU_Zero_Flag" type="logic">
+         <obj_property name="ElementShortName">ALU_Zero_Flag</obj_property>
+         <obj_property name="ObjectShortName">ALU_Zero_Flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/DWIDTH" type="array">
+         <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/ADD" type="array">
+         <obj_property name="ElementShortName">ADD[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ADD[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/SUB" type="array">
+         <obj_property name="ElementShortName">SUB[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SUB[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/SLL" type="array">
+         <obj_property name="ElementShortName">SLL[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SLL[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/SLT" type="array">
+         <obj_property name="ElementShortName">SLT[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SLT[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/SLTU" type="array">
+         <obj_property name="ElementShortName">SLTU[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SLTU[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/XOR" type="array">
+         <obj_property name="ElementShortName">XOR[3:0]</obj_property>
+         <obj_property name="ObjectShortName">XOR[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/SRL" type="array">
+         <obj_property name="ElementShortName">SRL[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SRL[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/SRA" type="array">
+         <obj_property name="ElementShortName">SRA[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SRA[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/OR" type="array">
+         <obj_property name="ElementShortName">OR[3:0]</obj_property>
+         <obj_property name="ObjectShortName">OR[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/alu/AND" type="array">
+         <obj_property name="ElementShortName">AND[3:0]</obj_property>
+         <obj_property name="ObjectShortName">AND[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group54" type="group">
+      <obj_property name="label">Data Mem Ctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Mem_Addr_LSB" type="array">
+         <obj_property name="ElementShortName">Mem_Addr_LSB[1:0]</obj_property>
+         <obj_property name="ObjectShortName">Mem_Addr_LSB[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Lw_Sw_OP" type="array">
+         <obj_property name="ElementShortName">Lw_Sw_OP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">Lw_Sw_OP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Register_In_B" type="array">
+         <obj_property name="ElementShortName">Register_In_B[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Register_In_B[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Data_Mem_Read" type="array">
+         <obj_property name="ElementShortName">Data_Mem_Read[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Data_Mem_Read[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Store_Word_Ctrl" type="logic">
+         <obj_property name="ElementShortName">Store_Word_Ctrl</obj_property>
+         <obj_property name="ObjectShortName">Store_Word_Ctrl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Data_Mem_Write_Ctrl" type="array">
+         <obj_property name="ElementShortName">Data_Mem_Write_Ctrl[3:0]</obj_property>
+         <obj_property name="ObjectShortName">Data_Mem_Write_Ctrl[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Data_Mem_Read_Out" type="array">
+         <obj_property name="ElementShortName">Data_Mem_Read_Out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Data_Mem_Read_Out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/Data_Mem_Write_Out" type="array">
+         <obj_property name="ElementShortName">Data_Mem_Write_Out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Data_Mem_Write_Out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/DWIDTH" type="array">
+         <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/LB_OP_LOAD" type="array">
+         <obj_property name="ElementShortName">LB_OP_LOAD[2:0]</obj_property>
+         <obj_property name="ObjectShortName">LB_OP_LOAD[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/LH_OP_LOAD" type="array">
+         <obj_property name="ElementShortName">LH_OP_LOAD[2:0]</obj_property>
+         <obj_property name="ObjectShortName">LH_OP_LOAD[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/LW_OP_LOAD" type="array">
+         <obj_property name="ElementShortName">LW_OP_LOAD[2:0]</obj_property>
+         <obj_property name="ObjectShortName">LW_OP_LOAD[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/LBU_OP_LOAD" type="array">
+         <obj_property name="ElementShortName">LBU_OP_LOAD[2:0]</obj_property>
+         <obj_property name="ObjectShortName">LBU_OP_LOAD[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/LHU_OP_LOAD" type="array">
+         <obj_property name="ElementShortName">LHU_OP_LOAD[2:0]</obj_property>
+         <obj_property name="ObjectShortName">LHU_OP_LOAD[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/SB_OP_STORE" type="array">
+         <obj_property name="ElementShortName">SB_OP_STORE[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SB_OP_STORE[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/SH_OP_STORE" type="array">
+         <obj_property name="ElementShortName">SH_OP_STORE[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SH_OP_STORE[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/data_mem_ctrl/SW_OP_STORE" type="array">
+         <obj_property name="ElementShortName">SW_OP_STORE[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SW_OP_STORE[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group70" type="group">
+      <obj_property name="label">Imm Gen</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/Instruction" type="array">
+         <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/Imm_Sel" type="array">
+         <obj_property name="ElementShortName">Imm_Sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">Imm_Sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/Imm_Gen_Out" type="array">
+         <obj_property name="ElementShortName">Imm_Gen_Out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Imm_Gen_Out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/imm_i_type" type="array">
+         <obj_property name="ElementShortName">imm_i_type[11:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_i_type[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/imm_s_type" type="array">
+         <obj_property name="ElementShortName">imm_s_type[11:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_s_type[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/imm_b_type" type="array">
+         <obj_property name="ElementShortName">imm_b_type[12:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_b_type[12:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/imm_j_type" type="array">
+         <obj_property name="ElementShortName">imm_j_type[20:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_j_type[20:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/instruct_funct3" type="array">
+         <obj_property name="ElementShortName">instruct_funct3[2:0]</obj_property>
+         <obj_property name="ObjectShortName">instruct_funct3[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/DWIDTH" type="array">
+         <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/I_TYPE" type="array">
+         <obj_property name="ElementShortName">I_TYPE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">I_TYPE[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/S_TYPE" type="array">
+         <obj_property name="ElementShortName">S_TYPE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">S_TYPE[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/B_TYPE" type="array">
+         <obj_property name="ElementShortName">B_TYPE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">B_TYPE[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/J_TYPE" type="array">
+         <obj_property name="ElementShortName">J_TYPE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">J_TYPE[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/SLL" type="array">
+         <obj_property name="ElementShortName">SLL[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SLL[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/imm_gen/SRL_SRA" type="array">
+         <obj_property name="ElementShortName">SRL_SRA[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SRL_SRA[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group80" type="group">
+      <obj_property name="label">PC</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/Clk_Core" type="logic">
+         <obj_property name="ElementShortName">Clk_Core</obj_property>
+         <obj_property name="ObjectShortName">Clk_Core</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/Rst_Core_N" type="logic">
+         <obj_property name="ElementShortName">Rst_Core_N</obj_property>
+         <obj_property name="ObjectShortName">Rst_Core_N</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/PC_Sel" type="logic">
+         <obj_property name="ElementShortName">PC_Sel</obj_property>
+         <obj_property name="ObjectShortName">PC_Sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/Program_Count_Imm" type="array">
+         <obj_property name="ElementShortName">Program_Count_Imm[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Program_Count_Imm[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/Program_Count_Off" type="array">
+         <obj_property name="ElementShortName">Program_Count_Off[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Program_Count_Off[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/Program_Count" type="array">
+         <obj_property name="ElementShortName">Program_Count[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Program_Count[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/program_count_four" type="array">
+         <obj_property name="ElementShortName">program_count_four[31:0]</obj_property>
+         <obj_property name="ObjectShortName">program_count_four[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/program_count_new" type="array">
+         <obj_property name="ElementShortName">program_count_new[31:0]</obj_property>
+         <obj_property name="ObjectShortName">program_count_new[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/program_counter_top/DWIDTH" type="array">
+         <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group394" type="group">
+      <obj_property name="label">Instruct Mem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/Clk_Core" type="logic">
+         <obj_property name="ElementShortName">Clk_Core</obj_property>
+         <obj_property name="ObjectShortName">Clk_Core</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/Rst_Core_N" type="logic">
+         <obj_property name="ElementShortName">Rst_Core_N</obj_property>
+         <obj_property name="ObjectShortName">Rst_Core_N</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/Program_Count" type="array">
+         <obj_property name="ElementShortName">Program_Count[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Program_Count[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/Instruction" type="array">
+         <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/rom_addr" type="array">
+         <obj_property name="ElementShortName">rom_addr[13:0]</obj_property>
+         <obj_property name="ObjectShortName">rom_addr[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/i" type="array">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/DWIDTH" type="array">
+         <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/MEM_SIZE" type="array">
+         <obj_property name="ElementShortName">MEM_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/instruct_mem/ADDR_SIZE" type="array">
+         <obj_property name="ElementShortName">ADDR_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ADDR_SIZE[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group320" type="group">
+      <obj_property name="label">Reg</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Clk_Core" type="logic">
+         <obj_property name="ElementShortName">Clk_Core</obj_property>
+         <obj_property name="ObjectShortName">Clk_Core</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Rst_Core_N" type="logic">
+         <obj_property name="ElementShortName">Rst_Core_N</obj_property>
+         <obj_property name="ObjectShortName">Rst_Core_N</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Read_Addr_Port_1" type="array">
+         <obj_property name="ElementShortName">Read_Addr_Port_1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">Read_Addr_Port_1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Read_Data_Port_1" type="array">
+         <obj_property name="ElementShortName">Read_Data_Port_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Read_Data_Port_1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Read_Addr_Port_2" type="array">
+         <obj_property name="ElementShortName">Read_Addr_Port_2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">Read_Addr_Port_2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Read_Data_Port_2" type="array">
+         <obj_property name="ElementShortName">Read_Data_Port_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Read_Data_Port_2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Write_Addr_Port_1" type="array">
+         <obj_property name="ElementShortName">Write_Addr_Port_1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">Write_Addr_Port_1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Write_Data_Port_1" type="array">
+         <obj_property name="ElementShortName">Write_Data_Port_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Write_Data_Port_1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/Wr_En" type="logic">
+         <obj_property name="ElementShortName">Wr_En</obj_property>
+         <obj_property name="ObjectShortName">Wr_En</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/reg_array" type="array">
+         <obj_property name="ElementShortName">reg_array[31:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_array[31:0][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/i" type="array">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/register_file/j" type="array">
+         <obj_property name="ElementShortName">j[31:0]</obj_property>
+         <obj_property name="ObjectShortName">j[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group279" type="group">
+      <obj_property name="label">Branch</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/branch_comp/Read_Reg_Data_1" type="array">
+         <obj_property name="ElementShortName">Read_Reg_Data_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Read_Reg_Data_1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/branch_comp/Read_Reg_Data_2" type="array">
+         <obj_property name="ElementShortName">Read_Reg_Data_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Read_Reg_Data_2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/branch_comp/Branch_Un_Ctrl" type="logic">
+         <obj_property name="ElementShortName">Branch_Un_Ctrl</obj_property>
+         <obj_property name="ObjectShortName">Branch_Un_Ctrl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/branch_comp/Branch_Equal" type="logic">
+         <obj_property name="ElementShortName">Branch_Equal</obj_property>
+         <obj_property name="ObjectShortName">Branch_Equal</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/branch_comp/Branch_Lt" type="logic">
+         <obj_property name="ElementShortName">Branch_Lt</obj_property>
+         <obj_property name="ObjectShortName">Branch_Lt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/core_1/branch_comp/DWIDTH" type="array">
+         <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

@@ -47,8 +47,28 @@ assign Instruction = instr_mem[rom_addr];       //Asynchronous read from instruc
 initial begin
   for (i=0; i<MEM_SIZE; i++) begin //Fill Instruct with 0 before writing from file
     instr_mem[i] = '0;
-	end
-  $readmemh("../../../../../../project/mem_files/instruct_file_r.txt", instr_mem); //read hex from instruct file
+  end
+  instr_mem[0] = 32'h00c00513;
+  instr_mem[1] = 32'h010000ef;
+  instr_mem[2] = 32'h00a02023;
+  instr_mem[3] = 32'h00000013;
+  instr_mem[4] = 32'h0000007f;
+  instr_mem[5] = 32'hff810113;
+  instr_mem[6] = 32'h00112223;
+  instr_mem[7] = 32'h00a12023;
+  instr_mem[8] = 32'hfff50513;
+  instr_mem[9] = 32'h00051863;
+  instr_mem[10] = 32'h00100513;
+  instr_mem[11] = 32'h00810113;
+  instr_mem[12] = 32'h00008067;
+  instr_mem[13] = 32'hfe1ff0ef;
+  instr_mem[14] = 32'h00050293;
+  instr_mem[15] = 32'h00012503;
+  instr_mem[16] = 32'h00412083;
+  instr_mem[17] = 32'h00810113;
+  instr_mem[18] = 32'h02550533;
+  instr_mem[19] = 32'h00008067;
+  //$readmemh("../../../../../../project/mem_files/instruct_file_3.txt", instr_mem); //read hex from instruct file
 end
 
 ////////////////////////////////////////////////////////////////

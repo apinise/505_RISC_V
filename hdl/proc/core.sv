@@ -16,11 +16,19 @@ module core #(
   parameter DWIDTH = 32
 )(
   // Global clock and reset
-  input   logic               Clk_Core,     // Core Clk
-  input   logic               Rst_Core_N,   // Core Clk Rst
+  input   logic               Clk_Core,       // Core Clk
+  input   logic               Rst_Core_N,     // Core Clk Rst
   // Instruction memory interface
-  input   logic [31:0]        Instruction,  // Instruction from mem
-  output  logic [DWIDTH-1:0]  Program_Count // Program count for mem address
+  input   logic [31:0]        Instruction,    // Instruction from mem
+  output  logic [DWIDTH-1:0]  Program_Count,  // Program count for mem address
+  // Data memory interface
+  input   logic [DWIDTH-1:0]  Mem_Data_Read,  // 32-bit data read from data mem
+  output  logic [DWIDTH-1:0]  Mem_Data_Write, // 32-bit data to write to data mem
+  output  logic [DWIDTH-1:0]  Mem_Data_Addr,  // Data mem read/write addr
+  output  logic               Mem_Read_Ctrl,  // Data mem read ctrl
+  output  logic [3:0]         Mem_Write_Ctrl, // Data mem write ctrl
+  // HALT OPCODE Clk Control
+  output  logic               Clk_Enable
 );
 
 ////////////////////////////////////////////////////////////////
@@ -51,6 +59,7 @@ logic [DWIDTH-1:0]  alu_input_b;
 // Nets for general purpose alu signals
 logic [DWIDTH-1:0]  alu_output;
 logic [3:0]         alu_opcode;
+logic [2:0]         mul_opcode;
 logic               alu_zero_flag;
 
 // PROGRAM COUNTER NETS
@@ -59,11 +68,30 @@ logic [DWIDTH-1:0] program_count;
 logic [DWIDTH-1:0] program_count_offset;
 logic [DWIDTH-1:0] program_count_imm;
 
+// IMMEDIATE GEN NETS
+logic [DWIDTH-1:0] immediate_gen_output;
+
+// DATA MEM CTRL INTERFACE NETS
+logic [1:0]         data_mem_addr_lsb;
+logic [DWIDTH-1:0]  data_mem_read_out;
+
+// BRANCH COMPARATOR NETS
+logic branch_equal_comp;
+logic branch_less_than_comp;
+
+// CTRL LOGIC NETS
 // Nets for mux control signals
 logic       mux_pc_sel;
 logic       mux_alu_a_sel;
 logic       mux_alu_b_sel;
 logic [1:0] mux_wb_sel;
+// Misc ctrl signals
+logic [1:0] imm_gen_sel;
+// Data mem control signals
+logic [2:0] lw_sw_opcode;
+logic       data_mem_sw_enable;
+// Branch control signals
+logic       branch_unsigned_sel;
 
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////
@@ -71,33 +99,37 @@ logic [1:0] mux_wb_sel;
 
 // Control Logic
 ctrl_logic ctrl_logic (
-  .Instruction    (Instruction),    // Instruct from mem
-  .ALU_Opcode     (alu_opcode),     // ALU Opcode to alu
-  .Reg_Wr_En      (reg_wr_en),      // Reg write enable to reg
-  .PC_Sel         (mux_pc_sel),     // PC Mux selection
-  .ALU_Input_A_Sel(mux_alu_a_sel),  // ALU input a selection
-  .ALU_Input_B_Sel(mux_alu_b_sel),  // ALU input b selection
-  .Reg_WB_Sel     (mux_wb_sel)      // Reg write back mux selection
+  .Instruction      (Instruction),        // Instruct from mem
+  .ALU_Opcode       (alu_opcode),         // ALU Opcode to alu
+  .MUL_Opcode       (mul_opcode),         // Mul opcode to alu
+  .Reg_Wr_En        (reg_wr_en),          // Reg write enable to reg
+  .PC_Sel           (mux_pc_sel),         // PC Mux selection
+  .ALU_Input_A_Sel  (mux_alu_a_sel),      // ALU input a selection
+  .ALU_Input_B_Sel  (mux_alu_b_sel),      // ALU input b selection
+  .Reg_WB_Sel       (mux_wb_sel),         // Reg write back mux selection
+  .Imm_Gen_Sel      (imm_gen_sel),        // Immediate generator type selection
+  .Lw_Sw_OP         (lw_sw_opcode),       // Opcode for lw sw data mem ctrl
+  .Store_Word_En    (data_mem_sw_enable), // Enable sw for data mem
+  .Read_Ctrl        (Mem_Read_Ctrl),
+  .Branch_Equal     (branch_equal_comp),
+  .Branch_Less_Than (branch_less_than_comp),
+  .Branch_Un_Sel    (branch_unsigned_sel),
+  .Clk_Enable       (Clk_Enable)
 );
 
 // ALU
-alu #(
-  .DWIDTH(DWIDTH)
-)
-alu
+alu alu
 (
   .ALU_In_A     (alu_input_a),  // ALU input a from mux
   .ALU_In_B     (alu_input_b),  // ALU input b from mux
   .ALU_OP       (alu_opcode),   // ALU opcode from ctrl logic
+  .MUL_OP       (mul_opcode),   // MUL DIV opcode from ctrl logic
   .ALU_Out      (alu_output),   // ALU output to write back mux, data mem, pc mux
   .ALU_Zero_Flag(alu_zero_flag) // ALU zero flag
 );
 
 // Program Counter
-program_counter_top #(
-  .DWIDTH(DWIDTH)
-)
-program_counter_top (
+program_counter_top program_counter_top (
   .Clk_Core         (Clk_Core),
   .Rst_Core_N       (Rst_Core_N),
   .PC_Sel           (mux_pc_sel),           // Program counter load selection
@@ -119,33 +151,52 @@ register_file register_file (
   .Wr_En            (reg_wr_en)         // Reg write ctrl from ctrl logic
 );
 
+// Immediate Generator
+imm_gen imm_gen (
+  .Instruction(Instruction),
+  .Imm_Sel    (imm_gen_sel),
+  .Imm_Gen_Out(immediate_gen_output)
+);
+
+// Data Mem Interface Control
+data_mem_ctrl data_mem_ctrl (
+  .Mem_Addr_LSB       (data_mem_addr_lsb),  // 2-bit lsb of ALU address result
+  .Lw_Sw_OP           (lw_sw_opcode),       // LW SW opcode
+  .Register_In_B      (reg_read_data_2),    // Data to write into data mem from reg
+  .Data_Mem_Read      (Mem_Data_Read),      // Data read from mem
+  .Store_Word_Ctrl    (data_mem_sw_enable), // Enable writing to mem
+  .Data_Mem_Write_Ctrl(Mem_Write_Ctrl),     // Generate mem byte write enable
+  .Data_Mem_Read_Out  (data_mem_read_out),  // Sign extended read data to writeback
+  .Data_Mem_Write_Out (Mem_Data_Write)      // Data to write to mem after 
+);
+
+// Branch Comparator
+branch_comp branch_comp (
+  .Read_Reg_Data_1(reg_read_data_1),
+  .Read_Reg_Data_2(reg_read_data_2),
+  .Branch_Un_Ctrl (branch_unsigned_sel),
+  .Branch_Equal   (branch_equal_comp),
+  .Branch_Lt      (branch_less_than_comp)
+);
+  
 // Multiplexers for alu inputs
-mux2to1 #(
-  .DWIDTH(DWIDTH)
-)
-alu_in_a_mux (
+mux2to1 alu_in_a_mux (
   .Mux_In_A (reg_read_data_1),  // Reg data
   .Mux_In_B (program_count),    // Current PC
   .Input_Sel(mux_alu_a_sel),
   .Mux_Out  (alu_input_a)
 );
 
-mux2to1 #(
-  .DWIDTH(DWIDTH)
-)
-alu_in_b_mux (
-  .Mux_In_A (reg_read_data_2),  // Reg data
-  .Mux_In_B (32'd0),            // Immediate gen value
+mux2to1 alu_in_b_mux (
+  .Mux_In_A (reg_read_data_2),      // Reg data
+  .Mux_In_B (immediate_gen_output), // Immediate gen value
   .Input_Sel(mux_alu_b_sel),
   .Mux_Out  (alu_input_b)
 );
 
 // Multiplexer for data write back
-mux3to1 #(
-  .DWIDTH(DWIDTH)
-)
-write_back_mux (
-  .Mux_In_A (32'd0),                // Data mem value
+mux3to1 write_back_mux (
+  .Mux_In_A (data_mem_read_out),    // Data mem value
   .Mux_In_B (alu_output),           // ALU output value
   .Mux_In_C (program_count_offset), // PC+4 value
   .Input_Sel(mux_wb_sel),           // Writeback selection from ctrl logic
@@ -165,6 +216,10 @@ assign reg_write_addr   = Instruction[11:7];
 assign program_count      = Program_Count;
 assign program_count_imm  = alu_output;
 
+// Data Mem Ctrl Interface assignments
+assign data_mem_addr_lsb = alu_output[1:0];
+assign Mem_Data_Addr = alu_output;
+
 ////////////////////////////////////////////////////////////////
 //////////////////   Instantiation Template   //////////////////
 ////////////////////////////////////////////////////////////////
@@ -176,7 +231,13 @@ core (
   .Clk_Core(),
   .Rst_Core_N(),
   .Instruction(),
-  .Program_Count()
+  .Program_Count(),
+  .Mem_Data_Read(),
+  .Mem_Data_Write(),
+  .Mem_Data_Addr(),
+  .Mem_Read_Ctrl(),
+  .Mem_Write_Ctrl(),
+  .Clk_Enable()
 );
 */
 endmodule

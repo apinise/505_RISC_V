@@ -1,0 +1,475 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Sep 20 12:55:55 2023
+# Process ID: 16304
+# Current directory: D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.runs/synth_1
+# Command line: vivado.exe -log proc_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source proc_top.tcl
+# Log file: D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.runs/synth_1/proc_top.vds
+# Journal file: D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.runs/synth_1\vivado.jou
+# Running On: DESKTOP-P77UBKI, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 4, Host memory: 16929 MB
+#-----------------------------------------------------------
+source proc_top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.srcs/utils_1/imports/synth_1/proc_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.srcs/utils_1/imports/synth_1/proc_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top proc_top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 48624
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1814.340 ; gain = 409.289
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'proc_top' [D:/505_Project/505_RISC_V/hdl/proc/proc_top.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'core' [D:/505_Project/505_RISC_V/hdl/proc/core.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'ctrl_logic' [D:/505_Project/505_RISC_V/hdl/ctrl_logic/ctrl_logic.sv:15]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/ctrl_logic/ctrl_logic.sv:268]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl_logic' (0#1) [D:/505_Project/505_RISC_V/hdl/ctrl_logic/ctrl_logic.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'alu' [D:/505_Project/505_RISC_V/hdl/alu/alu.sv:16]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [D:/505_Project/505_RISC_V/hdl/alu/alu.sv:16]
+INFO: [Synth 8-6157] synthesizing module 'program_counter_top' [D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_top.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'mux2to1' [D:/505_Project/505_RISC_V/hdl/lib/mux2to1.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'mux2to1' (0#1) [D:/505_Project/505_RISC_V/hdl/lib/mux2to1.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'program_counter_add' [D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_add.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter_add' (0#1) [D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_add.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'program_counter' [D:/505_Project/505_RISC_V/hdl/program_counter/program_counter.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter' (0#1) [D:/505_Project/505_RISC_V/hdl/program_counter/program_counter.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter_top' (0#1) [D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_top.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/505_Project/505_RISC_V/hdl/reg_gp/register_file.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (0#1) [D:/505_Project/505_RISC_V/hdl/reg_gp/register_file.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'imm_gen' [D:/505_Project/505_RISC_V/hdl/immediate_gen/imm_gen.sv:15]
+INFO: [Synth 8-6155] done synthesizing module 'imm_gen' (0#1) [D:/505_Project/505_RISC_V/hdl/immediate_gen/imm_gen.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'data_mem_ctrl' [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_ctrl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'data_mem_lw' [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_lw.sv:21]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_lw.sv:62]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_lw.sv:77]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_lw.sv:52]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem_lw' (0#1) [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_lw.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'data_mem_sw' [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_sw.sv:21]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_sw.sv:52]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_sw.sv:60]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_sw.sv:50]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem_sw' (0#1) [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_sw.sv:21]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_ctrl.sv:58]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_ctrl.sv:65]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_ctrl.sv:70]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_ctrl.sv:76]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem_ctrl' (0#1) [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_ctrl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'branch_comp' [D:/505_Project/505_RISC_V/hdl/branch_comp/branch_comp.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'branch_comp' (0#1) [D:/505_Project/505_RISC_V/hdl/branch_comp/branch_comp.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mux3to1' [D:/505_Project/505_RISC_V/hdl/lib/mux3to1.sv:21]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/505_Project/505_RISC_V/hdl/lib/mux3to1.sv:33]
+INFO: [Synth 8-6155] done synthesizing module 'mux3to1' (0#1) [D:/505_Project/505_RISC_V/hdl/lib/mux3to1.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'core' (0#1) [D:/505_Project/505_RISC_V/hdl/proc/core.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'instruct_mem' [D:/505_Project/505_RISC_V/hdl/instruct_mem/instruct_mem.sv:15]
+INFO: [Synth 8-6155] done synthesizing module 'instruct_mem' (0#1) [D:/505_Project/505_RISC_V/hdl/instruct_mem/instruct_mem.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (0#1) [D:/505_Project/505_RISC_V/hdl/data_mem/data_mem.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'proc_top' (0#1) [D:/505_Project/505_RISC_V/hdl/proc/proc_top.sv:15]
+WARNING: [Synth 8-3936] Found unconnected internal register 'instruct_funct7_reg' and it is trimmed from '7' to '6' bits. [D:/505_Project/505_RISC_V/hdl/ctrl_logic/ctrl_logic.sv:159]
+WARNING: [Synth 8-7129] Port Mem_Data_Address[31] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[30] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[29] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[28] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[27] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[26] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[25] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[24] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[23] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[22] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[21] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[20] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[19] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[18] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[17] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[16] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[1] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Mem_Data_Address[0] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Clk_Core in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_Core_N in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[31] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[30] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[29] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[28] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[27] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[26] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[25] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[24] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[23] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[22] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[21] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[20] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[19] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[18] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[17] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[16] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[1] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[0] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_Core_N in module register_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MUL_OP[2] in module alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MUL_OP[1] in module alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MUL_OP[0] in module alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[31] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[29] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[28] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[27] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[26] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[24] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[23] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[22] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[21] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[20] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[19] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[18] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[17] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[16] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[15] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[11] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[10] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[9] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[8] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[7] in module ctrl_logic is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1950.355 ; gain = 545.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1950.355 ; gain = 545.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1950.355 ; gain = 545.305
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1950.355 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2029.996 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2029.996 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6841] Block RAM (genblk1[1].data_mem_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   3 Input   32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
++---RAMs : 
+	             512K Bit	(16384 X 32 bit)          RAMs := 1     
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 19    
+	   4 Input   32 Bit        Muxes := 4     
+	   3 Input   32 Bit        Muxes := 2     
+	   3 Input   16 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 3     
+	   8 Input    4 Bit        Muxes := 2     
+	  11 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	  11 Input    3 Bit        Muxes := 2     
+	   4 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	  11 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 2     
+	  11 Input    1 Bit        Muxes := 8     
+	   7 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port Clk_Core in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_Core_N in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[31] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[30] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[29] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[28] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[27] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[26] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[25] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[24] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[23] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[22] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[21] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[20] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[19] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[18] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[17] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[16] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[1] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Program_Count[0] in module instruct_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MUL_OP[2] in module alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MUL_OP[1] in module alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MUL_OP[0] in module alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[31] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[24] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[23] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[22] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[21] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[20] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[19] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[18] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[17] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[16] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[15] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[11] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[10] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[9] in module ctrl_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[8] in module ctrl_logic is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6841] Block RAM (data_mem/genblk1[1].data_mem_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------+------------+---------------+----------------+
+|Module Name  | RTL Object | Depth x Width | Implemented As | 
++-------------+------------+---------------+----------------+
+|instruct_mem | instr_mem  | 16384x24      | LUT            | 
+|instruct_mem | p_0_out    | 16384x24      | LUT            | 
++-------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|proc_top    | data_mem/genblk1[1].data_mem_reg | 16 K x 32(READ_FIRST)  | W | R |                        |   |   | Port A           | 0      | 16     | 
++------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                         | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------------------------------+-----------+----------------------+--------------+
+|proc_top    | core_1/register_file/reg_array_reg | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|proc_top    | data_mem/genblk1[1].data_mem_reg | 16 K x 32(READ_FIRST)  | W | R |                        |   |   | Port A           | 0      | 16     | 
++------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+------------------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                         | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------------------------------+-----------+----------------------+--------------+
+|proc_top    | core_1/register_file/reg_array_reg | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_2_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_2_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance data_mem/genblk1[1].data_mem_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2029.996 ; gain = 624.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2042.387 ; gain = 637.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2042.387 ; gain = 637.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2042.387 ; gain = 637.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2042.387 ; gain = 637.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2042.387 ; gain = 637.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2042.387 ; gain = 637.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    32|
+|3     |LUT1     |     3|
+|4     |LUT2     |    65|
+|5     |LUT3     |   151|
+|6     |LUT4     |   147|
+|7     |LUT5     |    82|
+|8     |LUT6     |   216|
+|9     |RAM32M   |    10|
+|10    |RAM32X1D |     4|
+|11    |RAMB36E1 |    16|
+|12    |FDCE     |    32|
+|13    |IBUF     |     2|
+|14    |OBUF     |    16|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2042.387 ; gain = 637.336
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:40 . Memory (MB): peak = 2042.387 ; gain = 557.695
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2042.387 ; gain = 637.336
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2054.457 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 62 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 16 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2058.152 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: 125def1b
+INFO: [Common 17-83] Releasing license: Synthesis
+85 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 2058.152 ; gain = 1031.363
+INFO: [Common 17-1381] The checkpoint 'D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.runs/synth_1/proc_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file proc_top_utilization_synth.rpt -pb proc_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 20 12:56:52 2023...

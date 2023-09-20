@@ -49,9 +49,10 @@ integer j;
 
 initial begin
   for (i=0; i<32; i++) begin
-    $readmemb("../../../../../../project/mem_files/register_file_r.txt", reg_array);
-    //reg_array[i] = 32'd0;
+    //$readmemb("../../../../../../project/mem_files/register_file_1.txt", reg_array);
+    reg_array[i] = 32'd0;
   end
+  reg_array[2] = 32'b00000000000000000111111111110000;
 end
 
 always_ff @(posedge Clk_Core) begin
