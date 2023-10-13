@@ -1,0 +1,54 @@
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot proc_top_r_tb_behav xil_defaultlib.proc_top_r_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm.v" Line 70. Module clk_mmcm has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm_clk_wiz.v" Line 70. Module clk_mmcm_clk_wiz has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/MMCME2_ADV.v" Line 123. Module MMCME2_ADV(CLKFBOUT_MULT_F=51.0,CLKIN1_PERIOD=10.0,CLKOUT0_DIVIDE_F=51.0,CLKOUT1_DIVIDE=51,CLKOUT1_PHASE=120.0,CLKOUT2_DIVIDE=51,CLKOUT2_PHASE=240.0,DIVCLK_DIVIDE=5) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm.v" Line 70. Module clk_mmcm has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm_clk_wiz.v" Line 70. Module clk_mmcm_clk_wiz has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/MMCME2_ADV.v" Line 123. Module MMCME2_ADV(CLKFBOUT_MULT_F=51.0,CLKIN1_PERIOD=10.0,CLKOUT0_DIVIDE_F=51.0,CLKOUT1_DIVIDE=51,CLKOUT1_PHASE=120.0,CLKOUT2_DIVIDE=51,CLKOUT2_PHASE=240.0,DIVCLK_DIVIDE=5) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2022.2/rdi_builds/continuous/2022_10_14_3671981/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ctrl_logic
+Compiling module xil_defaultlib.multiplier
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.mux2to1
+Compiling module xil_defaultlib.program_counter_add
+Compiling module xil_defaultlib.program_counter
+Compiling module xil_defaultlib.program_counter_top
+Compiling module xil_defaultlib.register_file
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.data_mem_lw
+Compiling module xil_defaultlib.data_mem_sw
+Compiling module xil_defaultlib.data_mem_ctrl
+Compiling module xil_defaultlib.branch_comp
+Compiling module xil_defaultlib.mux3to1
+Compiling module xil_defaultlib.core
+Compiling module xil_defaultlib.instruct_mem_default
+Compiling module xil_defaultlib.data_mem_default
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=51.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_mmcm_clk_wiz
+Compiling module xil_defaultlib.clk_mmcm
+Compiling module xil_defaultlib.proc_top
+Compiling module xil_defaultlib.proc_top_r_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot proc_top_r_tb_behav

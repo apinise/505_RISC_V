@@ -1,0 +1,42 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_mmcm_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/505_Project/505_RISC_V/project/work/505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_mmcm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/alu/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/branch_comp/branch_comp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module branch_comp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/proc/core.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/ctrl_logic/ctrl_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ctrl_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/data_mem/data_mem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_ctrl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_lw.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem_lw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/data_mem/data_mem_sw.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem_sw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/immediate_gen/imm_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imm_gen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/instruct_mem/instruct_mem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instruct_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/alu/multiplier.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/lib/mux2to1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2to1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/lib/mux3to1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux3to1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/proc/proc_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module proc_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/program_counter/program_counter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module program_counter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_add.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module program_counter_add
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/program_counter/program_counter_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module program_counter_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/hdl/reg_gp/register_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/505_Project/505_RISC_V/sim/unit/r_type/proc_top_r_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module proc_top_r_tb

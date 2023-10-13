@@ -1,0 +1,31 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../505_RISC_V_prj.gen/sources_1/ip/clk_mmcm" \
+"../../../../505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm_clk_wiz.v" \
+"../../../../505_RISC_V_prj.gen/sources_1/ip/clk_mmcm/clk_mmcm.v" \
+
+sv xil_defaultlib  --include "../../../../505_RISC_V_prj.gen/sources_1/ip/clk_mmcm" \
+"../../../../../../hdl/alu/alu.sv" \
+"../../../../../../hdl/branch_comp/branch_comp.sv" \
+"../../../../../../hdl/proc/core.sv" \
+"../../../../../../hdl/ctrl_logic/ctrl_logic.sv" \
+"../../../../../../hdl/data_mem/data_mem.sv" \
+"../../../../../../hdl/data_mem/data_mem_ctrl.sv" \
+"../../../../../../hdl/data_mem/data_mem_lw.sv" \
+"../../../../../../hdl/data_mem/data_mem_sw.sv" \
+"../../../../../../hdl/immediate_gen/imm_gen.sv" \
+"../../../../../../hdl/instruct_mem/instruct_mem.sv" \
+"../../../../../../hdl/alu/multiplier.sv" \
+"../../../../../../hdl/lib/mux2to1.sv" \
+"../../../../../../hdl/lib/mux3to1.sv" \
+"../../../../../../hdl/proc/proc_top.sv" \
+"../../../../../../hdl/program_counter/program_counter.sv" \
+"../../../../../../hdl/program_counter/program_counter_add.sv" \
+"../../../../../../hdl/program_counter/program_counter_top.sv" \
+"../../../../../../hdl/reg_gp/register_file.sv" \
+"../../../../../../sim/unit/r_type/proc_top_r_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
