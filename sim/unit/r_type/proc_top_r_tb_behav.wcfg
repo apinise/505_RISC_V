@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="50.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="115.301 ns"></ZoomEndTime>
-      <Cursor1Time time="57.074 ns"></Cursor1Time>
+      <ZoomStartTime time="550.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,215.001 ns"></ZoomEndTime>
+      <Cursor1Time time="698.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="223"></NameColumnWidth>
-      <ValueColumnWidth column_width="155"></ValueColumnWidth>
+      <ValueColumnWidth column_width="143"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/proc_top_r_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -27,6 +27,14 @@
    <wvobject fp_name="/proc_top_r_tb/rst_core_n" type="logic">
       <obj_property name="ElementShortName">rst_core_n</obj_property>
       <obj_property name="ObjectShortName">rst_core_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/proc_top_r_tb/dut/locked" type="logic">
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/proc_top_r_tb/dut/core_1/run" type="logic">
+      <obj_property name="ElementShortName">run</obj_property>
+      <obj_property name="ObjectShortName">run</obj_property>
    </wvobject>
    <wvobject fp_name="group19" type="group">
       <obj_property name="label">Data Mem</obj_property>
@@ -464,5 +472,33 @@
          <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
          <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="group117" type="group">
+      <obj_property name="label">MMCM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_top_r_tb/dut/clk_mmcm/clk_out1" type="logic">
+         <obj_property name="ElementShortName">clk_out1</obj_property>
+         <obj_property name="ObjectShortName">clk_out1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/clk_mmcm/clk_out2" type="logic">
+         <obj_property name="ElementShortName">clk_out2</obj_property>
+         <obj_property name="ObjectShortName">clk_out2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/clk_mmcm/resetn" type="logic">
+         <obj_property name="ElementShortName">resetn</obj_property>
+         <obj_property name="ObjectShortName">resetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/clk_mmcm/locked" type="logic">
+         <obj_property name="ElementShortName">locked</obj_property>
+         <obj_property name="ObjectShortName">locked</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_top_r_tb/dut/clk_mmcm/clk_in1" type="logic">
+         <obj_property name="ElementShortName">clk_in1</obj_property>
+         <obj_property name="ObjectShortName">clk_in1</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/proc_top_r_tb/dut/core_1/ctrl_logic/Clk_Enable" type="logic">
+      <obj_property name="ElementShortName">Clk_Enable</obj_property>
+      <obj_property name="ObjectShortName">Clk_Enable</obj_property>
    </wvobject>
 </wave_config>

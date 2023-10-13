@@ -20,8 +20,8 @@ proc_top #(
   .DWIDTH(32)
 )
 dut (
-  .Clk_Core(clk),
-  .Rst_Core_N(rst_core_n)
+  .Clk_Core(clk)
+  //.Rst_Core_N(rst_core_n)
 );
 
 ////////////////////////////////////////////////////////////////

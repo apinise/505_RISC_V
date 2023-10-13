@@ -24,6 +24,7 @@ module program_counter_top #(
   input  logic              Clk_Core,				      // 100 MHz Core Clock
   input  logic              Rst_Core_N,				    // Core Clock Reset
   input  logic              PC_Sel,					      // Input Select 0: Increment 1: Immediate
+  input  logic              Run,
   input  logic [DWIDTH-1:0] Program_Count_Imm,		// Immediate Offset of PC
   output logic [DWIDTH-1:0] Program_Count_Off,     // PC + 4 Offset
   output logic [DWIDTH-1:0] Program_Count			    // Current Program Count
@@ -55,6 +56,7 @@ program_counter_add program_counter_add (
 program_counter program_counter (
   .Clk_Core         (Clk_Core),
   .Rst_Core_N       (Rst_Core_N),
+  .Run              (Run),
   .Program_Count_New(program_count_new),
   .Program_Count    (Program_Count)
 );

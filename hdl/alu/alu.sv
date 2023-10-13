@@ -81,13 +81,14 @@ localparam REMU   = 3'b111;
 ///////////////////////   Internal Net   ///////////////////////
 ////////////////////////////////////////////////////////////////
 
-logic [DWIDTH-1:0] mul_div_low = 32'd0;
-logic [DWIDTH-1:0] mul_div_upper = 32'd0;
+logic [DWIDTH-1:0] mul_div_low;
+logic [DWIDTH-1:0] mul_div_upper;
 
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////
 ////////////////////////////////////////////////////////////////
 
+/*
 multiplier multiplier (
   .Mul_In_A     (ALU_In_A),
   .Mul_In_B     (ALU_In_B),
@@ -95,6 +96,7 @@ multiplier multiplier (
   .Mul_Out_Upper(mul_div_upper),
   .Mul_Out_Lower(mul_div_low)
 );
+*/
 
 ////////////////////////////////////////////////////////////////
 ///////////////////////   Module Logic   ///////////////////////
@@ -112,7 +114,9 @@ always_comb begin
     SRA:  ALU_Out = $signed(ALU_In_A) >>> ALU_In_B; //signed shift logic right
     OR:   ALU_Out = ALU_In_A | ALU_In_B; //or
     AND:  ALU_Out = ALU_In_A & ALU_In_B; //and
-    MULT: begin
+    MULT: ALU_Out = ALU_In_A * ALU_In_B;
+    /*
+    begin
       casez(MUL_OP)
         MUL:    ALU_Out = mul_div_low;
         MULH:   ALU_Out = mul_div_upper;
@@ -124,6 +128,7 @@ always_comb begin
         REMU:   ALU_Out = mul_div_low;
       endcase
     end
+    */
     default: begin
       ALU_Out = ALU_In_A + ALU_In_B; //default add
     end

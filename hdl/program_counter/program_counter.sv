@@ -23,6 +23,7 @@ module program_counter #(
 )(
   input  logic              Clk_Core,				      // Core Clock
   input  logic              Rst_Core_N,				    // Core Clock Reset
+  input  logic              Run,
   input  logic [DWIDTH-1:0] Program_Count_New,		// Next Program Count
   output logic [DWIDTH-1:0] Program_Count			    // Current Program Count
 );
@@ -31,12 +32,24 @@ module program_counter #(
 ///////////////////////   Module Logic   ///////////////////////
 ////////////////////////////////////////////////////////////////
 
-always_ff @(posedge Clk_Core or negedge Rst_Core_N) begin
+
+initial begin
+  Program_Count = '0;
+end
+
+always@(posedge Clk_Core) begin
+  /*
   if (~Rst_Core_N) begin
-    Program_Count <= '0;	              // Reset PC on reset
+    Program_Count <= -4;	              // Reset PC on reset
   end else begin
-    Program_Count <= Program_Count_New;	// Set new PC
-  end
+  */
+    if (Run) begin
+        Program_Count <= Program_Count_New;
+    end
+    else begin
+        Program_Count <= Program_Count;	// Set new PC
+    end
+  //end
 end
 
 ////////////////////////////////////////////////////////////////
@@ -50,6 +63,7 @@ program_counter #(
 program_counter (
   .Clk_Core(),
   .Rst_Core_N(),
+  .Run(),
   .Program_Count_New(),
   .Program_Count()
 );

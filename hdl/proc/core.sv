@@ -17,6 +17,7 @@ module core #(
 )(
   // Global clock and reset
   input   logic               Clk_Core,       // Core Clk
+  input   logic               Clk_Core_WB,
   input   logic               Rst_Core_N,     // Core Clk Rst
   // Instruction memory interface
   input   logic [31:0]        Instruction,    // Instruction from mem
@@ -27,8 +28,8 @@ module core #(
   output  logic [DWIDTH-1:0]  Mem_Data_Addr,  // Data mem read/write addr
   output  logic               Mem_Read_Ctrl,  // Data mem read ctrl
   output  logic [3:0]         Mem_Write_Ctrl, // Data mem write ctrl
-  // HALT OPCODE Clk Control
-  output  logic               Clk_Enable
+  // MCMM Clk Control
+  input   logic               Locked
 );
 
 ////////////////////////////////////////////////////////////////
@@ -41,57 +42,59 @@ module core #(
 
 // REGISTER FILE NETS
 // Nets for register read data
-logic [DWIDTH-1:0]  reg_read_data_1;
-logic [DWIDTH-1:0]  reg_read_data_2;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  reg_read_data_1;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  reg_read_data_2;
 // Nets for register read addr
-logic [4:0]         reg_read_addr_1;
-logic [4:0]         reg_read_addr_2;
+(* DONT_TOUCH = "TRUE" *)logic [4:0]         reg_read_addr_1;
+(* DONT_TOUCH = "TRUE" *)logic [4:0]         reg_read_addr_2;
 // Nets for register write
-logic [DWIDTH-1:0]  reg_write_data;
-logic [4:0]         reg_write_addr;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  reg_write_data;
+(* DONT_TOUCH = "TRUE" *)logic [4:0]         reg_write_addr;
 // Nets for register write enable
-logic               reg_wr_en;
+(* DONT_TOUCH = "TRUE" *)logic               reg_wr_en;
 
 // ALU NETS
 // Nets for alu input data from muxs
-logic [DWIDTH-1:0]  alu_input_a;
-logic [DWIDTH-1:0]  alu_input_b;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  alu_input_a;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  alu_input_b;
 // Nets for general purpose alu signals
-logic [DWIDTH-1:0]  alu_output;
-logic [3:0]         alu_opcode;
-logic [2:0]         mul_opcode;
-logic               alu_zero_flag;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  alu_output;
+(* DONT_TOUCH = "TRUE" *)logic [3:0]         alu_opcode;
+(* DONT_TOUCH = "TRUE" *)logic [2:0]         mul_opcode;
+(* DONT_TOUCH = "TRUE" *)logic               alu_zero_flag;
 
 // PROGRAM COUNTER NETS
 // Nets for program counter signals
-logic [DWIDTH-1:0] program_count;
-logic [DWIDTH-1:0] program_count_offset;
-logic [DWIDTH-1:0] program_count_imm;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0] program_count;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0] program_count_offset;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0] program_count_imm;
 
 // IMMEDIATE GEN NETS
-logic [DWIDTH-1:0] immediate_gen_output;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0] immediate_gen_output;
 
 // DATA MEM CTRL INTERFACE NETS
-logic [1:0]         data_mem_addr_lsb;
-logic [DWIDTH-1:0]  data_mem_read_out;
+(* DONT_TOUCH = "TRUE" *)logic [1:0]         data_mem_addr_lsb;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  data_mem_read_out;
 
 // BRANCH COMPARATOR NETS
-logic branch_equal_comp;
-logic branch_less_than_comp;
+(* DONT_TOUCH = "TRUE" *)logic branch_equal_comp;
+(* DONT_TOUCH = "TRUE" *)logic branch_less_than_comp;
 
 // CTRL LOGIC NETS
 // Nets for mux control signals
-logic       mux_pc_sel;
-logic       mux_alu_a_sel;
-logic       mux_alu_b_sel;
-logic [1:0] mux_wb_sel;
+(* DONT_TOUCH = "TRUE" *)logic       mux_pc_sel;
+(* DONT_TOUCH = "TRUE" *)logic       mux_alu_a_sel;
+(* DONT_TOUCH = "TRUE" *)logic       mux_alu_b_sel;
+(* DONT_TOUCH = "TRUE" *)logic [1:0] mux_wb_sel;
 // Misc ctrl signals
-logic [1:0] imm_gen_sel;
+(* DONT_TOUCH = "TRUE" *)logic [1:0] imm_gen_sel;
 // Data mem control signals
-logic [2:0] lw_sw_opcode;
-logic       data_mem_sw_enable;
+(* DONT_TOUCH = "TRUE" *)logic [2:0] lw_sw_opcode;
+(* DONT_TOUCH = "TRUE" *)logic       data_mem_sw_enable;
 // Branch control signals
-logic       branch_unsigned_sel;
+(* DONT_TOUCH = "TRUE" *)logic       branch_unsigned_sel;
+
+(* DONT_TOUCH = "TRUE" *)logic       run;
 
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////
@@ -133,6 +136,7 @@ program_counter_top program_counter_top (
   .Clk_Core         (Clk_Core),
   .Rst_Core_N       (Rst_Core_N),
   .PC_Sel           (mux_pc_sel),           // Program counter load selection
+  .Run              (run),
   .Program_Count_Imm(program_count_imm),    // ALU value to load to pc
   .Program_Count_Off(program_count_offset), // PC+4 value to load to pc
   .Program_Count    (Program_Count)         // Current pc to instruct mem, and alu input a mux
@@ -140,7 +144,7 @@ program_counter_top program_counter_top (
 
 // Register File
 register_file register_file (
-  .Clk_Core         (Clk_Core),
+  .Clk_Core         (Clk_Core_WB),
   .Rst_Core_N       (Rst_Core_N),
   .Read_Addr_Port_1 (reg_read_addr_1),  // Reg read addr 1 from instruction
   .Read_Data_Port_1 (reg_read_data_1),  // Reg read data 1 to alu input a mux
@@ -220,6 +224,8 @@ assign program_count_imm  = alu_output;
 assign data_mem_addr_lsb = alu_output[1:0];
 assign Mem_Data_Addr = alu_output;
 
+assign run = (Locked == 1'b1 && Instruction[6:0] != 7'b1111111) ? 1'b1 : 1'b0;
+
 ////////////////////////////////////////////////////////////////
 //////////////////   Instantiation Template   //////////////////
 ////////////////////////////////////////////////////////////////
@@ -237,7 +243,7 @@ core (
   .Mem_Data_Addr(),
   .Mem_Read_Ctrl(),
   .Mem_Write_Ctrl(),
-  .Clk_Enable()
+  .Locked()
 );
 */
 endmodule

@@ -15,9 +15,7 @@
 module proc_top #(
   parameter DWIDTH = 32
 )(
-  input logic Clk_Core,
-  input logic Rst_Core_N,
-  output logic [15:0] Addr
+  input logic Clk_Core
 );
 
 ////////////////////////////////////////////////////////////////
@@ -28,28 +26,30 @@ module proc_top #(
 ///////////////////////   Internal Net   ///////////////////////
 ////////////////////////////////////////////////////////////////
 
-logic Clk_Core_g;
-logic Clk_Core_N;
-logic clk_enable;
+(* DONT_TOUCH = "TRUE" *)logic Clk_Core_P;
+(* DONT_TOUCH = "TRUE" *)logic Clk_Core_N;
+(* DONT_TOUCH = "TRUE" *)logic Clk_Core_W;
+(* DONT_TOUCH = "TRUE" *)logic locked;
 
 // Instruction Mem Interface Nets
-logic [DWIDTH-1:0]  program_count;
-logic [31:0]        instruction;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  program_count;
+(* DONT_TOUCH = "TRUE" *)logic [31:0]        instruction;
 
 // Data Mem Interface Nets
-logic [DWIDTH-1:0]  data_mem_address;
-logic [DWIDTH-1:0]  data_mem_read;
-logic [DWIDTH-1:0]  data_mem_write;
-logic [3:0]         data_mem_write_ctrl;
-logic               data_mem_read_ctrl;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  data_mem_address;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  data_mem_read;
+(* DONT_TOUCH = "TRUE" *)logic [DWIDTH-1:0]  data_mem_write;
+(* DONT_TOUCH = "TRUE" *)logic [3:0]         data_mem_write_ctrl;
+(* DONT_TOUCH = "TRUE" *)logic               data_mem_read_ctrl;
 
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////
 ////////////////////////////////////////////////////////////////
 
 core core_1 (
-  .Clk_Core       (Clk_Core),
-  .Rst_Core_N     (Rst_Core_N),
+  .Clk_Core       (Clk_Core_P),
+  .Clk_Core_WB    (Clk_Core_W),
+  .Rst_Core_N     (1'b1),
   .Instruction    (instruction),
   .Program_Count  (program_count),
   .Mem_Data_Read  (data_mem_read),
@@ -57,12 +57,12 @@ core core_1 (
   .Mem_Data_Addr  (data_mem_address),
   .Mem_Read_Ctrl  (data_mem_read_ctrl),
   .Mem_Write_Ctrl (data_mem_write_ctrl),
-  .Clk_Enable     (clk_enable)
+  .Locked         (locked)
 );
 
 instruct_mem instruct_mem (
-  .Clk_Core       (Clk_Core),
-  .Rst_Core_N     (Rst_Core_N),
+  .Clk_Core       (Clk_Core_P),
+  .Rst_Core_N     (1'b1),
   .Program_Count  (program_count),
   .Instruction    (instruction)
 );
@@ -76,21 +76,20 @@ data_mem data_mem (
   .Mem_Data_Read    (data_mem_read)
 );
 
+clk_mmcm clk_mmcm (
+    .clk_in1(Clk_Core),
+    .resetn(1'b1),
+    .clk_out1(Clk_Core_P),
+    .clk_out2(Clk_Core_N),
+    .clk_out3(Clk_Core_W),
+    .locked(locked)
+);
+
 ////////////////////////////////////////////////////////////////
 ///////////////////////   Module Logic   ///////////////////////
 ////////////////////////////////////////////////////////////////
 
-assign Clk_Core_N = ~Clk_Core;
-assign Addr = data_mem_address[15:0];
-
-always_comb begin
-  if (clk_enable) begin
-    Clk_Core_g  = Clk_Core;
-  end
-  else begin
-    Clk_Core_g = 1'b0;
-  end
-end
+assign Addr = data_mem_read[15:0];
 
 ////////////////////////////////////////////////////////////////
 //////////////////   Instantiation Template   //////////////////

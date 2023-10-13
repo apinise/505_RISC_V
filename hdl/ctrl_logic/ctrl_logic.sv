@@ -163,6 +163,7 @@ always_comb begin
   
     OPCODE_HALT: begin
       Clk_Enable = 1'b0;
+      Read_Ctrl  = 1'b1;
     end
   
     OPCODE_ALU_R: begin
